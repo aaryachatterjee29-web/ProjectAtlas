@@ -35,10 +35,11 @@ if str(_PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(_PROJECT_ROOT))
 
 # Importing the models package registers every model with Base.metadata.
+from sqlalchemy import inspect  # noqa: E402
+
 from backend.database import models  # noqa: E402,F401
 from backend.database.base import Base  # noqa: E402
 from backend.database.engine import get_database_url, get_engine  # noqa: E402
-from sqlalchemy import inspect  # noqa: E402
 
 
 def main() -> None:
